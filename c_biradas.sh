@@ -11,7 +11,7 @@ while IFS=  read title; do
  TITLE="$(cat ${OUTPUT} |pup|grep "${title}\" " -A5|head -2|tail -1|tr -s ' '|sed -e 's/\ //')"
  PRICE="$(cat ${OUTPUT} |pup|grep "${title}\" " -A5|head -5|tail -1|tr -s ' '|sed -e 's/\ //' -e 's/TL//'|tr -d ' ')"
  HREF="${URL_PFX}/${title}"
- echo "${TITLE};${PRICE};${HREF}"
+ echo "$(gdate +%Y-%m-%d\ %H:%M:%S.%3N);${TITLE};${PRICE};${HREF}"
 done< <(cat ${OUTPUT} |pup|grep urun-title|cut -d\" -f2|cut -d/ -f3)|\
 sort -u|\
 sort -t\; -k 2 -n
