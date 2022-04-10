@@ -1,1 +1,12 @@
 03/31 00:40:13  + generating charts
+04/05 10:25:13  + generating charts
+04/05 10:25:37  + running c_biradas.sh
+04/05 10:25:39  + running c_biramarket.sh
+04/05 10:25:40  + running c_butikbira.sh
+04/05 10:25:44  + running c_egemalt.sh
+04/05 10:25:45  + running c_fermantasyonmarket.sh
+04/05 10:25:47  + running c_kedikoy.sh
+04/05 10:25:52  + running c_tazemayse.sh
+04/05 10:25:54  + running c_vinomarket.sh
+04/05 10:25:55 Importing fiyatlar.csv into fiyatlar.sqlite
+04/05 10:25:55  + generating charts

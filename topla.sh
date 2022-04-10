@@ -40,6 +40,6 @@ done< <(sqlite3 ${SQLTDB} 'SELECT name FROM fiyatlar'|sort | uniq)
 #done< <(sqlite3 ${SQLTDB} 'SELECT name FROM fiyatlar'|sort | uniq -c|sort -nr)
 }
 
-#run_crawlers
-#import_csv
+run_crawlers
+import_csv
 write_charts
