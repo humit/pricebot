@@ -17,7 +17,7 @@ mv ${PRICES}.tmp ${PRICES}
 # Create href links
 while IFS= read line; do 
  URL=$(echo ${line}|cut -d\; -f3)
- sed -i .bak -e "s#$URL#\<a href=$URL\>$URL\</a\>#" ${PRICES}
+ sed -i -e "s#$URL#\<a href=$URL\>$URL\</a\>#" ${PRICES}
 done < ${PRICES}
 
 # csv to html
