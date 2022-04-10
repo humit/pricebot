@@ -14,7 +14,7 @@ function mk_log()
 
 # Run all crawlers
 run_crawlers(){
- for script in c_*.sh; do
+ for script in c_biramarket*.sh; do
  mk_log " + running ${script}"
   . ./${script} >> ${PRICES}
  done
@@ -35,7 +35,7 @@ while IFS= read -r name; do
  # Cleanup extra spaces
  name=$(echo $name|tr -s \ |sed -e 's/^ //')
  echo ${name}
- sqlite3 ${SQLTDB} "SELECT id, price FROM fiyatlar WHERE name like '%${name}%'"
+ sqlite3 ${SQLTDB} "SELECT date, price FROM fiyatlar WHERE name like '%${name}%'"
 done< <(sqlite3 ${SQLTDB} 'SELECT name FROM fiyatlar'|sort | uniq)
 #done< <(sqlite3 ${SQLTDB} 'SELECT name FROM fiyatlar'|sort | uniq -c|sort -nr)
 }
