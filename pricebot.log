@@ -10,3 +10,21 @@
 04/05 10:25:54  + running c_vinomarket.sh
 04/05 10:25:55 Importing fiyatlar.csv into fiyatlar.sqlite
 04/05 10:25:55  + generating charts
+04/10 15:19:09  + running c_biradas.sh
+04/10 15:19:15  + running c_biramarket.sh
+04/10 15:19:16  + running c_butikbira.sh
+04/10 15:19:24  + running c_fermantasyonmarket.sh
+04/10 15:19:30  + running c_kedikoy.sh
+04/10 15:19:32  + running c_tazemayse.sh
+04/10 15:19:33  + running c_vinomarket.sh
+04/10 15:19:40 Importing fiyatlar.csv into fiyatlar.sqlite
+04/10 15:19:40  + generating charts
+04/10 15:22:10  + running c_biradas.sh
+04/10 15:22:16  + running c_biramarket.sh
+04/10 15:22:22  + running c_butikbira.sh
+04/10 15:22:25  + running c_fermantasyonmarket.sh
+04/10 15:22:26  + running c_kedikoy.sh
+04/10 15:22:28  + running c_tazemayse.sh
+04/10 15:22:30  + running c_vinomarket.sh
+04/10 15:22:36 Importing fiyatlar.csv into fiyatlar.sqlite
+04/10 15:22:36  + generating charts

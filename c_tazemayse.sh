@@ -11,7 +11,7 @@ curl -s -L -A 'Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101 Firefox/8
 while IFS= read o; do
  HREF=$(grep -w "${o}" ${OUTPUT}|head -1|awk -F\" '/href=/ {print $2}')
  PRICE=$(grep -A4 -w ">${o}<" ${OUTPUT}|grep " TL"| tr -s '\t' ' '|tr -d ' '|sed 's/TL//'|xargs printf "%.2f"|tr ',' '.')
- echo "$(gdate +%Y-%m-%d\ %H:%M:%S.%3N);${o};${PRICE};${URL_PFX}${HREF}"
+ echo "$(date +%Y-%m-%d\ %H:%M:%S.%3N);${o};${PRICE};${URL_PFX}${HREF}"
 done< \
 <(cat ${OUTPUT} | \
 pup 'div[class="showcase-title"] text{}'|\

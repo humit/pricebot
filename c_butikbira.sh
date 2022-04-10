@@ -11,7 +11,7 @@ while IFS= read link; do
  HREF="${URL_PFX}${link}"
  PRICE=$(grep ${link} ${OUTPUT}| pup '.money text{}'|tr ',' '.')
  TITLE=$(grep ${link} ${OUTPUT}| pup '.title text{}')
- echo "$(gdate +%Y-%m-%d\ %H:%M:%S.%3N);${TITLE};${PRICE};${HREF}"
+ echo "$(date +%Y-%m-%d\ %H:%M:%S.%3N);${TITLE};${PRICE};${HREF}"
 done< \
 <(grep current_price ${OUTPUT} |\
  elinks -dump|awk -Ffile:// '/file:/ {print $2}')|\

@@ -9,9 +9,9 @@ curl -s -k -A 'Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101 Firefox/8
 
 while IFS= read id; do
  TITLE=$(grep "\"productName detailUrl\" data-id=\"${id}\"" ${OUTPUT} |cut -d\" -f 6)
- PRICE=$(grep "\"productName detailUrl\" data-id=\"${id}\"" ${OUTPUT} -A4 | grep ₺| cut -d₺ -f2|tr ',' '.')
+ PRICE=$(grep "\"productName detailUrl\" data-id=\"${id}\"" ${OUTPUT} -A4 | awk -F₺ '/₺/ {print $2}'|tr ',' '.')
  HREF=${URL_PFX}$(grep "\"productName detailUrl\" data-id=\"${id}\"" ${OUTPUT}|cut -d\' -f2)
- echo "$(gdate +%Y-%m-%d\ %H:%M:%S.%3N);${TITLE};${PRICE};${HREF}"
+ echo "${TITLE};${PRICE};${HREF}"
 done< <(grep "id\":\ " ${OUTPUT}|awk -F\" '{print $4}')|\
 sort -u|\
 sort -t\; -k 2 -n

@@ -14,7 +14,7 @@ while IFS= read id; do
  PRICE=$(grep "${TITLE}" ${OUTPUT} | grep pure-price | elinks -dump| grep " TL"|awk '{print $1}'|tr ',' '.')
  QTY=$(echo "{ \"items\": [ $(grep -B1 -A9 "\"id\": \"${id}\"" ${OUTPUT} |tr "\'" "\""| sed "s/},/}/" ) ] }"|jq '.items[].quantity')
  HREF=$(grep -A1 "$(grep "${TITLE}" ${OUTDMP}|head -1|tr '[,]' ' '|awk '{print $1}')\." ${OUTDMP} | tail -1|tr -d '\t')
- echo "$(gdate +%Y-%m-%d\ %H:%M:%S.%3N);${TITLE};${PRICE};${HREF}"
+ echo "$(date +%Y-%m-%d\ %H:%M:%S.%3N);${TITLE};${PRICE};${HREF}"
 done< \
 <(grep pure-price ${OUTPUT} | awk -F\' '{print $2}'| sort -u| grep -v ^$)|\
 sort -u|\
